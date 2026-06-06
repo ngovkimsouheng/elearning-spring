@@ -23,6 +23,6 @@ public class InstructorProfile {
     private String jobTitle;
     private String phoneNumber;
 
-    @OneToMany
+    @OneToMany(mappedBy = "instructorProfile")
     private List<Course> courses;
 }

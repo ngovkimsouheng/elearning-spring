@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "enrollemnts")
 public class Enrollment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer enrollmentId;
     private LocalDateTime enrollmentAt;
     private LocalDateTime paymentAt;
@@ -22,10 +23,8 @@ public class Enrollment {
     private Boolean paymentStatus;
 
     @ManyToOne
-    @JoinColumn(name = "course_id")
     private Course course;
     @ManyToOne
-    @JoinColumn(name = "student_id")
     private StudentProfile studentProfile;
 
 }

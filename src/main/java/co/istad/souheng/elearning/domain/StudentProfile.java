@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,5 +22,7 @@ public class StudentProfile {
     private String major;
     private String phoneNumber;
     private String university;
+    @OneToMany(mappedBy = "studentProfile")
+    private List<Enrollment> enrollments;
 
 }

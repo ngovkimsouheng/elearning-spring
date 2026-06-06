@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="courses")
+@Table(name = "courses")
 public class Course {
 
     @Id
@@ -28,7 +28,7 @@ public class Course {
     private String keyword;
     private String level;
     private BigDecimal price;
-    private String slug ;
+    private String slug;
     private Float starRating;
     private String thumbnail;
     private String title;
@@ -40,7 +40,10 @@ public class Course {
     @ManyToOne
     private InstructorProfile instructorProfile;
 
+    @OneToMany(mappedBy = "course")
+    private List<Enrollment> enrollments;
 
-
+    @OneToMany(mappedBy = "course")
+    private List<Video> videos;
 
 }
